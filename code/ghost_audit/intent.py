@@ -22,6 +22,11 @@ NOT_DELETION = re.compile("|".join([
     r"\bI (?:still|want to continue to) (?:need|use|want)\b",
     r"\bcontinue using the service",
     r"\bmarketing lists only\b",
+    r"\bno (?:quiero|deseo) (?:borrar|eliminar|cerrar)", r"\bsin (?:borrar|eliminar)", r"\bno (?:borren|eliminen)",
+    r"\bn[ãa]o (?:quero )?(?:excluir|apagar|eliminar|encerrar)", r"\bn[ãa]o excluam", r"\bsem (?:excluir|apagar)",
+    r"\bne (?:pas )?(?:supprimer|effacer)", r"\bne supprimez pas", r"\bsans supprimer",
+    r"\bnicht (?:l[öo]schen|entfernen)", r"\bohne (?:zu )?l[öo]schen",
+    r"삭제하지", r"削除しないで", r"削除せず", r"不要删除",
 ]), re.I)
 
 DELETION = re.compile("|".join([
