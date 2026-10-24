@@ -2,7 +2,7 @@
   "failures": 0,
   "models": {},
   "requests": 518,
-  "seconds": 1.19,
+  "seconds": 1.25,
   "total": {
     "cached_calls": 0,
     "calls": 0,

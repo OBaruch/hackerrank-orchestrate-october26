@@ -232,7 +232,7 @@ class Investigator:
                     if a["source_system"] == "deletion_worker" and any(t in a["details"] for t in self.FAILING_TEMPLATES):
                         failing = True
             info[r["case_id"]] = dict(req=r, subj=subj, systems={util.system_for(x) for x in found}, files=files,
-                                      failing=failing)
+                                      failing=failing, found=set(found))
         identified = self._identified()
         batches = defaultdict(list)
         for r in reqs:
@@ -276,11 +276,65 @@ class Investigator:
                     targets.append((a, tmpl))
                 need = [r for r in group if system not in info[r["case_id"]]["systems"] and not any(
                     util.system_for(x) == system for x in out.get(r["case_id"], {}))]
-                self._match(out, system, targets, need, info)
+                if system == "account_service":
+                    self._assign_accounts(out, group, items, targets, need, info)
+                else:
+                    self._match(out, system, targets, need, info)
         self.attribution = out
         return out
 
     RETAINED_SYSTEMS = ("security_service", "legal_service")
+
+    def _assign_accounts(self, out, group, items, targets, need, info):
+        """Every deletion request has one primary profile. Choose the assignment of the batch's
+        unidentified profile submissions to the requests still lacking one that (1) respects the worker
+        result / reported status pairing and evidence visibility, and (2) keeps the worker's processing
+        order a rotation of the requests' submission order, anchored on the profiles whose owner is
+        known from identifiers. When several assignments remain, a stable one is chosen (tagged a guess)."""
+        if not targets or not need:
+            return
+        from itertools import permutations
+
+        order = sorted(group, key=lambda r: (r["requested_at"], r["case_id"]))
+        rank = {r["case_id"]: i for i, r in enumerate(order)}
+        seq = [a["resource_id"] for a, _ in sorted(items, key=lambda x: (x[0]["event_time"], x[0]["activity_id"]))]
+        known = {}
+        for r in group:
+            c = r["case_id"]
+            for rid in list(info[c]["found"]) + list(out.get(c, {})):
+                if rid in seq:
+                    known[rid] = c
+        free = [a for a, _ in sorted(targets, key=lambda x: x[0]["event_time"])]
+        cases = [r for r in need if r["case_id"] not in known.values()]
+        if not free or not cases:
+            return
+        tmpl = {a["resource_id"]: t for a, t in targets}
+        ok = {(a["resource_id"], r["case_id"]): self._compatible(a, tmpl[a["resource_id"]], r, info) is not False
+              for a in free for r in cases}
+        k = min(len(free), len(cases))
+        best = []
+        for chosen in permutations([a["resource_id"] for a in free], k):
+            pairs = list(zip(chosen, [r["case_id"] for r in cases[:k]])) if len(cases) >= k else None
+            # enumerate which cases receive the chosen accounts
+            for case_pick in permutations([r["case_id"] for r in cases], k):
+                pairs = list(zip(chosen, case_pick))
+                if not all(ok[p] for p in pairs):
+                    continue
+                owner = dict(known)
+                owner.update(pairs)
+                ring = [rank[owner[rid]] for rid in seq if rid in owner]
+                n = len(order)
+                cyclic = all((ring[i + 1] - ring[i]) % n == 1 for i in range(len(ring) - 1)) if n > 1 else True
+                best.append((not cyclic, pairs))
+            if len(best) > 2000:
+                break
+        if not best:
+            return
+        best.sort(key=lambda x: (x[0], [(int(c.rsplit("_", 1)[1]), int(a.rsplit("_", 1)[1])) for a, c in x[1]]))
+        top = [set(b[1]) for b in best if b[0] == best[0][0]]
+        for rid, c in best[0][1]:
+            certain = all((rid, c) in t for t in top)
+            out[c][rid] = ("batch-ring" if not best[0][0] else "batch") if certain else "batch-guess"
 
     def _compatible(self, a, tmpl, r, info) -> bool | None:
         """None = target never appears in evidence (only allowed for primary profiles)."""
