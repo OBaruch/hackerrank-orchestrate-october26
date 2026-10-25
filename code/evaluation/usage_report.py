@@ -71,7 +71,10 @@ def main(argv=None):
         t = f["total"]
         out += ["", "## Cache-filling run (the run that called the API)", "",
                 f"{t['live_calls']} live calls, {t['input_tokens']:,} input and {t['output_tokens']:,} output tokens, "
-                f"billed ${t['live_cost_usd']:.4f}."]
+                f"billed ${t['live_cost_usd']:.4f}, wall time {f.get('seconds')} s. The final run "
+                f"replays exactly these answers from the cache, so it bills nothing itself."]
+        if f.get("note"):
+            out += ["", f["note"]]
     out += ["", f"API failures or invalid answers that fell back to the deterministic path: {u.get('failures', 0)}.",
             "", "The deterministic core (evidence parsing, identity, state reconstruction, policy, ordering) uses no "
             "model calls. With `--llm off` the whole run makes zero calls and still writes a valid `output.csv`."]

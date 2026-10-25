@@ -52,6 +52,34 @@ The four remaining mismatches:
 | case_04 | `account_004 VERIFY_RECORD_ABSENT evidence_54` missing | `account_004` does not appear in any participant-visible file or activity row. |
 | case_18 | `audit_record_6645 VERIFY_RECORD_PRESENT` missing | The record id appears in no participant-visible file. |
 | case_20 | `audit_record_5569 VERIFY_RECORD_PRESENT` missing | Same as case_18. |
+With `--llm off`, which uses only the keyword intent and PDFs and makes no model call, the sample metrics are identical. The public samples contain no screenshot-dependent request.
+
+### Claude's contribution on the evaluation set
+
+- **Intent.** Claude classified all 398 distinct request texts. It marks exactly 10 of the 518 evaluation requests as not authorizing deletion (case_533 to case_542):
+  - phone, name or email corrections;
+  - marketing opt-out;
+  - data export;
+  - access and invoice requests;
+  - login help.
+
+  The keyword fallback agrees on every evaluation request.
+- **Screenshots.** Claude vision transcribed the 11 screenshots into records: labels, identifiers, masking, and connector or restore state. Twelve evaluation requests depend on a screenshot or a PDF that the data catalog links to the subject. Without the screenshots, nine of them come out empty and case_46 lacks its tombstone step. With the transcriptions:
+
+| case | evidence | result |
+|---|---|---|
+| case_33 | PDF statement NST-2026-0718-1842 (`evidence_18`) | `export_1842` still downloadable → REPORT_REMAINING_RECORD |
+| case_34 | customer console (`evidence_04`) | `account_5762` shown live with email and phone → REPORT_REMAINING_RECORD |
+| case_35 | search inspector (`evidence_09`) | `search_428` still indexed; the similar `g.silva76.jr@` document is left alone |
+| case_39 | connector console (`evidence_14`) | `data_flow_1121` healthy and syncing the subject → REPORT_ACTIVE_DATA_FLOW |
+| case_45 | security explorer (`evidence_37`) | six signed `user_03` audit events retained → VERIFY_RECORD_PRESENT, COMPLETE |
+| case_46 | customer reference registry (`evidence_42`) | tombstone keeps only `user_17`, no name or contact → VERIFY_RECORD_REDACTED, COMPLETE |
+| case_50 | analytics profile (`evidence_19`) | `analytics_7438` still shows email and name → REPORT_EXPOSED_PII |
+| case_52 | download center (`evidence_23`) | `export_1260` still listed → REPORT_REMAINING_RECORD |
+| case_53 | support console (`evidence_28`) | `support_1034` still shows the customer's name and email → REPORT_EXPOSED_PII |
+| case_55 | backup console (`evidence_32`) | archive `backup_9287` holds the account with no restore block → REPORT_RESTORE_RISK |
+| case_61 | object storage browser (`evidence_46`) | `delivery_confirmation_19.pdf` (`object_19`) still stored → REPORT_REMAINING_RECORD |
+| case_63 | marketing console (`evidence_60`) | `marketing_001` live → REPORT_REMAINING_RECORD |
 <!-- /RESULTS:SAMPLES -->
 
 ## 2. Participant-made evaluation cases
@@ -124,6 +152,7 @@ The work was iterated against the public samples. Each row is a failure the eval
 | 8 | A three-way tie between invisible profiles in one run (case_23 `account_410`). | The worker handles a run's profiles in submission order, starting at an arbitrary request (a ring). This was measured on 42 runs whose owners are known from identifiers: 42 / 42 are rotations of the submission order. Anchored on known owners, the ring settles most ties. Remaining ambiguity is labelled `batch-guess` in the trace. | 32 / 28 |
 | 9 | The keyword fallback read *"No quiero borrar la cuenta"* as a deletion request (custom_01). | Explicit non-deletion phrases in Spanish, Portuguese, French, German, Korean, Japanese and Chinese are checked before the deletion words. With a key, Claude classifies intent and the keywords serve as a cross-check. | custom 4 / 4 |
 | 10 | Eval requests whose only evidence is a screenshot or a PDF statement produced empty answers (12 requests, e.g. case_33, case_34). The data catalog names the record by a reference such as the statement number `NST-2026-0718-1842` or `user_17`, not by its resource id. | Catalog references are matched against the records transcribed from screenshots by Claude vision and against PDF text. The matched record's visible identifiers, masking and connector or restore state give the resource state. | n/a (eval only) |
+| 11 | Comparing the cache-filling run with a later cached rerun showed 12 evaluation rows whose analytics tie was paired differently (cases 59/60, 77/79, 80/81, 380/381, 411/412, 497/499). One tie-solving loop iterated over a Python `set`, so its order depended on the interpreter's hash seed. | All tie loops iterate in a sorted order. The output is now byte-identical across `PYTHONHASHSEED` values (checked with seeds 0 to 5). | 32 / 28 (unchanged) |
 
 ## 4. Known limitations
 

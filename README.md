@@ -43,7 +43,7 @@ Each run also writes:
 - `code/runs/trace.jsonl`: one line per case with the resolved identity, every resource with its state, its evidence and why it was linked, and the intent decision.
 - `code/runs/usage.json`: model calls, tokens and cost.
 
-The run takes about 5 seconds when the cache is warm.
+The run takes about 2 seconds when the cache is warm. The cache-filling run with live calls took about 10 minutes and cost about $0.05 (`code/evaluation/usage_report.md`).
 
 ## Evaluate
 
@@ -129,7 +129,7 @@ The worker handles a run's profiles in the order the requests were submitted, st
 
 - Model: `claude-haiku-5-5`, the smallest current model. Override it with `--model` or `GHOST_AUDIT_MODEL`.
 - Calls:
-  - one intent call per distinct request text (about 410);
+  - one intent call per distinct request text (398 texts across both request files);
   - one vision call per screenshot (11).
 - Every call uses structured JSON output with a fixed schema, low effort and thinking off. Answers are validated: resource ids and identifiers must be well formed, and the step plan always comes from the deterministic core.
 - If the API is missing or fails, the pipeline falls back to the keyword classifier and to PDF-only media. The output stays valid.

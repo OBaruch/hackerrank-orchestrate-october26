@@ -301,7 +301,7 @@ class Investigator:
         known = {}
         for r in group:
             c = r["case_id"]
-            for rid in list(info[c]["found"]) + list(out.get(c, {})):
+            for rid in sorted(info[c]["found"]) + list(out.get(c, {})):
                 if rid in seq:
                     known[rid] = c
         free = [a for a, _ in sorted(targets, key=lambda x: x[0]["event_time"])]
@@ -382,7 +382,7 @@ class Investigator:
                     if rid not in assigned_r and len(live) == 1:
                         out[live[0]][rid] = tag
                         assigned_c.add(live[0]); assigned_r.add(rid); changed = True
-                for c in {c for cs in cmap.values() for c in cs} - assigned_c:
+                for c in sorted({c for cs in cmap.values() for c in cs} - assigned_c, key=lambda x: int(x.rsplit("_", 1)[1])):
                     live = [rid for rid, cs in cmap.items() if rid not in assigned_r and c in cs]
                     if len(live) == 1:
                         out[c][live[0]] = tag

@@ -30,7 +30,7 @@
     }
   },
   "requests": 518,
-  "seconds": 5.42,
+  "seconds": 1.65,
   "total": {
     "cached_calls": 409,
     "calls": 409,
