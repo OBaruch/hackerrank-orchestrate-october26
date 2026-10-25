@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks for the account associated with the address to be erased, including associated records, and requests confirmation of the outcome. This is a clear request for account and personal data deletion.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 677,
+  "output_tokens": 90
+ }
+}

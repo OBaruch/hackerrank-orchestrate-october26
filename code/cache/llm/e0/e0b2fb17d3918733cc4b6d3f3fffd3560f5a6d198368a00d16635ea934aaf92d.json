@@ -1,0 +1,61 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_17",
+     "ORD-20263245"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Orders",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_17",
+     "CS-3245"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Support",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_17",
+     "CS-3378"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Support",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_17",
+     "FIN-7742"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Finance",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Customer Reference Registry - user_17 Overview"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3723,
+  "output_tokens": 303
+ }
+}

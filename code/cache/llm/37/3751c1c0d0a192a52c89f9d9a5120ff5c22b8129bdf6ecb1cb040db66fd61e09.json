@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The request asks only to be removed from marketing lists and explicitly keeps receipts and service messages for the account, so it does not authorize deletion of the account or personal data.",
+  "request_type": "MARKETING_OPT_OUT"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 656,
+  "output_tokens": 99
+ }
+}

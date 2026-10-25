@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The requester explicitly asks to remove their account and the personal information linked to it, which is a request for erasure of account and personal data. The mention of identity review is procedural and does not change the deletion request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 677,
+  "output_tokens": 98
+ }
+}

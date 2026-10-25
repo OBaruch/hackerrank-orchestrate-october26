@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester says they already deleted the account and received a confirmation, but the email is still recognized, and asks to remove any remaining copy of their profile. This asks to finish or verify an erasure already requested, which counts as authorizing deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 669,
+  "output_tokens": 120
+ }
+}

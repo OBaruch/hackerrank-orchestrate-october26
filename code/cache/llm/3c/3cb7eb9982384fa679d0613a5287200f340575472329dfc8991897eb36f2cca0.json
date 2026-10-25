@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester states they are deleting the account and asks the company to verify that nothing tied to the old email address remains, including in non-displayed systems. This is a request to verify and finish an already-initiated deletion, which counts as authorizing deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 672,
+  "output_tokens": 121
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The user asks to close the account completely and ensure leftover integrations no longer send data, which is a request to finish or verify an already-initiated deletion and remove remaining data flows.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 674,
+  "output_tokens": 101
+ }
+}

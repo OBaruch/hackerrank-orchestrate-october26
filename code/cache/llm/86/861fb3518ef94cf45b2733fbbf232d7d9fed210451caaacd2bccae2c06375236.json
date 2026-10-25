@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The requester asks for a copy of the personal data held on their account and explicitly says not to delete or change anything, so this is an access request, not a deletion authorization.",
+  "request_type": "ACCESS"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 661,
+  "output_tokens": 88
+ }
+}

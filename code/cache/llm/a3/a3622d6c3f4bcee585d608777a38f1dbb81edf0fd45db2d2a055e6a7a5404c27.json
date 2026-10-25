@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The requester explicitly asks for the account associated with the address to be erased, which is a clear deletion request. The additional ask to complete the identity and data review is part of processing the deletion and does not change the request type.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 672,
+  "output_tokens": 101
+ }
+}

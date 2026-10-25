@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The user states they are deleting their account and requires that nothing in analytics still link back to them, which is an explicit request to erase their account and personal data; keeping only anonymous statistics does not negate the deletion request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 665,
+  "output_tokens": 103
+ }
+}

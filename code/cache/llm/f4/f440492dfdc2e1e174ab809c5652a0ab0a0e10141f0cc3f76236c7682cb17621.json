@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The requester asks only to stop promotional emails and explicitly states they still need the account and order history and are not asking for deletion.",
+  "request_type": "MARKETING_OPT_OUT"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 661,
+  "output_tokens": 85
+ }
+}

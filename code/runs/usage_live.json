@@ -1,0 +1,45 @@
+{
+  "failures": 0,
+  "models": {
+    "claude-haiku-5-5": {
+      "by_purpose": {
+        "intent": {
+          "calls": 398,
+          "input_tokens": 270299,
+          "output_tokens": 35920
+        },
+        "screenshot": {
+          "calls": 11,
+          "input_tokens": 41045,
+          "output_tokens": 3179
+        }
+      },
+      "cached_calls": 0,
+      "calls": 409,
+      "cost_usd": 0.050684,
+      "input_tokens": 311344,
+      "live_calls": 409,
+      "live_cost_usd": 0.050684,
+      "live_input_tokens": 311344,
+      "live_output_tokens": 39099,
+      "output_tokens": 39099,
+      "price_per_mtok": [
+        0.1,
+        0.5
+      ]
+    }
+  },
+  "note": "Cache-filling run on commit 33983bb (helper thread with the API key), as reported by that run: 409 live calls, 0 failures. Token counts per call are the ones stored with each cached answer.",
+  "requests": 518,
+  "seconds": 582.03,
+  "total": {
+    "cached_calls": 0,
+    "calls": 409,
+    "cost_usd": 0.050684,
+    "input_tokens": 311344,
+    "live_calls": 409,
+    "live_cost_usd": 0.050684,
+    "output_tokens": 39099
+  },
+  "unread_media": []
+}

@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The requester explicitly asks to close the account permanently, which is a request to erase the account and personal profile; the note about backups does not negate the deletion authorization since they only ask that backups not be able to restore the profile.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 663,
+  "output_tokens": 104
+ }
+}

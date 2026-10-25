@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester says their account was already reported deleted but traces remain in search, support, and analytics, and asks for those leftover copies to be removed and synchronization that could recreate them disabled. This is a request to finish or verify a deletion already requested, which counts as authorizing deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 677,
+  "output_tokens": 133
+ }
+}

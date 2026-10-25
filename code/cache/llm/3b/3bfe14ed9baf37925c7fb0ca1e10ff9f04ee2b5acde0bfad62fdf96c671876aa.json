@@ -1,0 +1,61 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "jain.aditi@gmail.com"
+    ],
+    "flow": "ENABLED",
+    "labels": [
+     "data_flow_1121"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "connector",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "lucia-torres@gmail.com"
+    ],
+    "flow": "ENABLED",
+    "labels": [
+     "data_flow_9846"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "connector",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "ENABLED",
+    "labels": [
+     "Order notifications"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "connector",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "ENABLED",
+    "labels": [
+     "Delivery tracking"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "connector",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Connections - Topology"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3853,
+  "output_tokens": 288
+ }
+}

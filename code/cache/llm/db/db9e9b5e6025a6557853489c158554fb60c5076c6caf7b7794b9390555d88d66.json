@@ -1,0 +1,85 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_003",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "account_closure_recorded",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_002",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Session revoked",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_001",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Recovery challenge completed",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_006",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Email change confirmed",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_005",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Login from new device",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_004",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "Password changed",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Account events"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3723,
+  "output_tokens": 450
+ }
+}

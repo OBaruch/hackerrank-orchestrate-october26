@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The account page is already gone, indicating a prior deletion, and the user asks to remove the leftover search result that still exposes the old profile. This asks to finish/clean up a deletion that was already requested, which counts as authorizing deletion of personal data.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 660,
+  "output_tokens": 124
+ }
+}

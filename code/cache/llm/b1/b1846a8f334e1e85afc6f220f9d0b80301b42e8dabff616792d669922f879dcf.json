@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The request explicitly asks to close the account and process the associated personal-data deletion, which is an authorization to erase the account and personal data; the remaining sentences ask for correct treatment of covered records and a confirmation, which support the deletion.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 680,
+  "output_tokens": 112
+ }
+}

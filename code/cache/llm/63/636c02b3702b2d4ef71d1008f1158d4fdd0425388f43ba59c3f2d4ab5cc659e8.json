@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The request asks for copies of past invoices and explicitly asks to keep the profile and purchase history in place, so it does not authorize deletion of the account or personal data.",
+  "request_type": "OTHER"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 660,
+  "output_tokens": 89
+ }
+}

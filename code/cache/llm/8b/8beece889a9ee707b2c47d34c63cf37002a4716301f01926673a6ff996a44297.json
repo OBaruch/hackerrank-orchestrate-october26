@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "pt",
+  "rationale": "The request explicitly asks for permanent deletion of the account associated with the email, and asks the company to verify current and previous identifiers as part of the deletion process and confirm the result, so it authorizes deletion.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 706,
+  "output_tokens": 104
+ }
+}

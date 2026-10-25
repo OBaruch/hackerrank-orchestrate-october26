@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks to remove records under both email addresses and to disable integrations that could copy the data back, which is an explicit request to erase the person's personal data.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 672,
+  "output_tokens": 85
+ }
+}

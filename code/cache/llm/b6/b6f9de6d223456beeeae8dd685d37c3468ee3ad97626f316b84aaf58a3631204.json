@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks to remove their profile and to clean their personal details from earlier support conversations, which is an erasure request. The note that some conversations may need to stay concerns another customer's data and does not negate the deletion of the requester's own personal data, so the request authorizes deletion of their personal data.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 680,
+  "output_tokens": 133
+ }
+}

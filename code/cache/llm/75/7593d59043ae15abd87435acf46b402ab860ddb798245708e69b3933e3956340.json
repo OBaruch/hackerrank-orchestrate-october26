@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "Korean",
+  "rationale": "The request explicitly asks for permanent deletion of the account linked to the email address, and also asks to review current and previous identifiers as part of the deletion procedure, which is consistent with a deletion request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 720,
+  "output_tokens": 102
+ }
+}
