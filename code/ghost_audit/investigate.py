@@ -4,8 +4,6 @@ Given a deletion request it (1) resolves every identifier of the subject, (2) di
 the subject's resources from evidence and activity inside the case window, (3) rebuilds
 each resource's state at audit_at from the latest grounded observation, and (4) applies
 deletion_rules.csv to produce findings, remediation and verification steps.
-
-The same functions are exposed to the LLM agent as tools (see agent.py).
 """
 from __future__ import annotations
 
