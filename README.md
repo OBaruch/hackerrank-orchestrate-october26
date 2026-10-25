@@ -52,6 +52,21 @@ python code/evaluation/main.py --custom     # runs the 32 public samples and the
 python code/evaluation/main.py --pred some.csv --gold dataset/sample_output.csv
 ```
 
+Unit and regression tests (standard library only, no API key, about 3 seconds):
+
+```bash
+python -m unittest discover -s code/tests -t code -v
+```
+
+- `test_extractors.py`: the six log formats, trace-id joins, SQL snapshots and how records become states.
+- `test_policy_and_contract.py`: every policy action, step ordering and each output-contract violation.
+- `test_investigation.py`: a small fictional dataset (`code/tests/fixtures.py`) with a historical email, evidence
+  captured before `requested_at` and after `audit_at`, and one `INCOMPLETE`, one `COMPLETE` and one
+  `NOT_APPLICABLE` case checked step by step.
+- `test_intent_and_llm.py`: multilingual keyword intent, the LLM fallback and the response cache.
+- `test_regression.py`: sample scores must not drop, the gold samples pass the validator, and a rerun reproduces
+  `output.csv` byte for byte. It is skipped when `dataset/` is not present.
+
 The results, the custom cases and the failure log are in
 [`code/evaluation/evaluation_report.md`](code/evaluation/evaluation_report.md). Token usage and cost are in
 [`code/evaluation/usage_report.md`](code/evaluation/usage_report.md).
@@ -143,6 +158,7 @@ code/ghost_audit/            agent package
 code/evaluation/main.py      evaluator (status, step, field and sequence accuracy)
 code/evaluation/custom_cases.json   participant-made cases
 code/evaluation/*.md         evaluation and usage reports
+code/tests/                  unit and regression tests
 code/cache/llm/              cached Claude answers (no secrets)
 output.csv                   predictions for dataset/deletion_requests.csv
 log.txt                      coding-agent transcript (AGENTS.md)
@@ -151,5 +167,5 @@ log.txt                      coding-agent transcript (AGENTS.md)
 ## Packaging
 
 ```bash
-zip -r code.zip README.md code -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "code/runs/*.jsonl"
+zip -rD code.zip README.md code -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "code/runs/*.jsonl"
 ```

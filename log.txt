@@ -330,3 +330,27 @@ branch=claude/project-thread-lkrh6b
 repo_root=/home/user/hackerrank-orchestrate-october26
 worktree=main
 parent_agent=none
+
+## [2026-10-25T04:36:00Z] Add unit and regression tests
+
+User Prompt (verbatim, secrets redacted):
+(no new user message; continuing the recommended option "Entrevista + tests" from the turn "como lo podemos mejorar? o que es el proximo paso?")
+
+Agent Response Summary:
+Added a standard-library unittest suite under code/tests/ (37 tests): the six log formats and trace joins, SQL snapshots, record states, every policy action, step ordering, each contract violation, multilingual keyword intent, the LLM cache and fallback, a small fictional dataset with one INCOMPLETE, one COMPLETE and one NOT_APPLICABLE case checked step by step, and regression checks that sample scores do not drop and that a rerun reproduces output.csv byte for byte. Running with warnings as errors showed that the SQL extractor left its SQLite connections open; it now closes them. Output, scores and the submission CSV are unchanged.
+
+Actions:
+* Created code/tests/ (__init__.py, fixtures.py, five test modules)
+* Edited code/ghost_audit/observations.py (close SQLite connection), code/ghost_audit/investigate.py (stale docstring)
+* Edited README.md (test instructions, packaging flag) and code/evaluation/evaluation_report.md (failure row 12)
+* python -W error::ResourceWarning -m unittest discover -s code/tests -t code (37 passed)
+* Rebuilt code.zip (444 files) and verified a clean extract reproduces output.csv and passes the tests
+* Appended this entry to log.txt
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5[1m]
+branch=claude/project-thread-lkrh6b
+repo_root=/home/user/hackerrank-orchestrate-october26
+worktree=main
+parent_agent=none

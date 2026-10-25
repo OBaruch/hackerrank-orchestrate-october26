@@ -330,6 +330,13 @@ def extract_log(file_id, captured_at, text: str) -> list[Observation]:
 # --------------------------------------------------------------------------- SQL
 def extract_sql(file_id, captured_at, text: str) -> list[Observation]:
     con = sqlite3.connect(":memory:")
+    try:
+        return _sql_observations(con, file_id, captured_at, text)
+    finally:
+        con.close()
+
+
+def _sql_observations(con, file_id, captured_at, text: str) -> list[Observation]:
     con.executescript(text)
     out: list[Observation] = []
     tables = [r[0] for r in con.execute("select name from sqlite_master where type='table'")]
