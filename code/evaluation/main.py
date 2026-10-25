@@ -120,10 +120,10 @@ def fmt(m: dict, title: str) -> str:
     return "\n".join(lines)
 
 
-def run_agent(requests: list | None, requests_file: str, llm: str):
+def run_agent(requests: list | None, requests_file: str, llm: str, model: str | None = None):
     from ghost_audit.pipeline import run
 
-    res = run(os.path.join(ROOT, "dataset"), requests_file, llm_mode=llm, extra_requests=requests)
+    res = run(os.path.join(ROOT, "dataset"), requests_file, llm_mode=llm, model=model, extra_requests=requests)
     return {r["case_id"]: r for r in res.rows}, res
 
 
@@ -132,6 +132,7 @@ def main(argv=None):
     ap.add_argument("--pred", help="existing prediction CSV (skip running the agent)")
     ap.add_argument("--gold", default=os.path.join(ROOT, "dataset", "sample_output.csv"))
     ap.add_argument("--llm", default="auto", choices=["auto", "cache", "live", "off"])
+    ap.add_argument("--model", default=None, help="Claude model id (default: the agent's default model)")
     ap.add_argument("--custom", action="store_true", help="also score evaluation/custom_cases.json")
     ap.add_argument("--json", help="write the metrics as JSON here")
     args = ap.parse_args(argv)
@@ -140,7 +141,7 @@ def main(argv=None):
     if args.pred:
         pred = load(args.pred)
     else:
-        pred, _ = run_agent(None, "sample_deletion_requests.csv", args.llm)
+        pred, _ = run_agent(None, "sample_deletion_requests.csv", args.llm, args.model)
     m = score(pred, gold)
     out = {"samples": m}
     print(fmt(m, "Public samples"))
@@ -149,7 +150,7 @@ def main(argv=None):
         with open(os.path.join(HERE, "custom_cases.json"), encoding="utf-8") as fh:
             custom = json.load(fh)
         reqs = [c["request"] for c in custom]
-        cpred, _ = run_agent(reqs, "deletion_requests.csv", args.llm)
+        cpred, _ = run_agent(reqs, "deletion_requests.csv", args.llm, args.model)
         cgold = {c["request"]["case_id"]: {"case_id": c["request"]["case_id"], "deletion_status": c["expected_status"],
                                            "steps_json": json.dumps(c["expected_steps"])} for c in custom}
         cm = score(cpred, cgold)

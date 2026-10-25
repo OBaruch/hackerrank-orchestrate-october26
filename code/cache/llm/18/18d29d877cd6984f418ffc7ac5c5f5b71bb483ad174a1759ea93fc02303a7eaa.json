@@ -1,0 +1,66 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "bluepeakco@outlook.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "backup_9291"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "backup",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "miller.logistics@company.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "backup_9288"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "backup",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "areed1433@gmail.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "backup_9287",
+     "segment-42-20260426.tar.zst"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "backup",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "summit-retail@company.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "backup_9286"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "backup",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Vault Recovery Manager - Customer-platform archives"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3854,
+  "output_tokens": 345
+ }
+}

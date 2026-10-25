@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The person refers to a prior account deletion and asks to remove leftover traces in search, support and analytics, and to disable synchronization that could recreate them. This is a request to finish or verify an existing deletion, which counts as authorizing deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 678,
+  "output_tokens": 121
+ }
+}

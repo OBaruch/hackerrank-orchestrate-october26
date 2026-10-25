@@ -1,0 +1,101 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "delivery_confirmation_19.pdf"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "delivery_confirmation_20.pdf"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "return_label_4821.pdf"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "return_label_4876.pdf"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "invoice_NS-10493.pdf"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "parcel_damage_7713.jpg"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "customer_export_2026-02-10.zip"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "customer_export_2026-02-12.zip"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "storage_object",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Nimbus Object Storage - northstar-customer-data bucket objects list"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3854,
+  "output_tokens": 621
+ }
+}

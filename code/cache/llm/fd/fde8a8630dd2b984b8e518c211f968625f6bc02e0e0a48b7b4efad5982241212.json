@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks to delete the account and its personal data, including associated records, and requests confirmation of the outcome.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 682,
+  "output_tokens": 75
+ }
+}

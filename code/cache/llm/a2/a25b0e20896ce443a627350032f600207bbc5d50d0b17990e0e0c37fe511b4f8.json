@@ -1,0 +1,94 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "kagyeman8947@fastmail.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "CS-5034",
+     "support_1034"
+    ],
+    "names": [
+     "Kofi Agyeman",
+     "Maya Chen"
+    ],
+    "phones": [],
+    "record_type": "support_ticket",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "1"
+    ],
+    "names": [
+     "Kofi Agyeman"
+    ],
+    "phones": [],
+    "record_type": "conversation_message",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "2"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "conversation_message",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "3"
+    ],
+    "names": [
+     "Maya Chen"
+    ],
+    "phones": [],
+    "record_type": "conversation_message",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "4"
+    ],
+    "names": [
+     "Kofi Agyeman"
+    ],
+    "phones": [],
+    "record_type": "conversation_message",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "ORD-20265034",
+     "SWF-884103"
+    ],
+    "names": [
+     "Maya Chen"
+    ],
+    "phones": [],
+    "record_type": "order",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Helpline Console - Ticket CS-5034 conversation"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3919,
+  "output_tokens": 490
+ }
+}

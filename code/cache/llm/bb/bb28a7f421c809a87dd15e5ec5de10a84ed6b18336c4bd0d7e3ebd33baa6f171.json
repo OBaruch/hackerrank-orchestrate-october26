@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks to verify that their account deletion was completed, which counts as authorizing deletion. They also note that a record with a similar email belongs to someone else and should not be treated as theirs, so only their own account is in scope.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 671,
+  "output_tokens": 114
+ }
+}

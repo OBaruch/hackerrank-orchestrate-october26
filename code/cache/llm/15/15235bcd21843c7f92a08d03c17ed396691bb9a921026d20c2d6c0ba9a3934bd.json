@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "English",
+  "rationale": "The person asks only to stop promotional emails and explicitly says they want to keep the account and order history and are not requesting deletion.",
+  "request_type": "MARKETING_OPT_OUT"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 662,
+  "output_tokens": 85
+ }
+}

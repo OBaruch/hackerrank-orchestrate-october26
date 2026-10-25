@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks to erase the account linked to their email address, which is a direct deletion request. The remaining sentences about applying the correct treatment and confirming completion are procedural and do not limit the request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 673,
+  "output_tokens": 102
+ }
+}

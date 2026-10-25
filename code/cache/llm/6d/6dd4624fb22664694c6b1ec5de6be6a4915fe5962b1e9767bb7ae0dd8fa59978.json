@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "English",
+  "rationale": "The customer requests copies of last year's invoices and explicitly asks to keep the profile and purchase history. This is an invoice request, not a deletion request.",
+  "request_type": "OTHER"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 661,
+  "output_tokens": 85
+ }
+}

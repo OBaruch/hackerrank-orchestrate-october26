@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks to permanently close the account. They allow legally required backups to be kept, but say those backups must not be able to restore the personal profile. This is a clear request for deletion.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 664,
+  "output_tokens": 92
+ }
+}

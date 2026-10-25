@@ -1,0 +1,45 @@
+{
+  "failures": 0,
+  "models": {
+    "claude-opus-5-5": {
+      "by_purpose": {
+        "intent": {
+          "calls": 398,
+          "input_tokens": 270697,
+          "output_tokens": 34086
+        },
+        "screenshot": {
+          "calls": 11,
+          "input_tokens": 41056,
+          "output_tokens": 3989
+        }
+      },
+      "cached_calls": 4,
+      "calls": 409,
+      "cost_usd": 2.008512,
+      "input_tokens": 311753,
+      "live_calls": 405,
+      "live_cost_usd": 1.971904,
+      "live_input_tokens": 305751,
+      "live_output_tokens": 37445,
+      "output_tokens": 38075,
+      "price_per_mtok": [
+        4.0,
+        20.0
+      ]
+    }
+  },
+  "requests": 518,
+  "seconds": 1193.34,
+  "total": {
+    "cached_calls": 4,
+    "calls": 409,
+    "cost_usd": 2.008512,
+    "input_tokens": 311753,
+    "live_calls": 405,
+    "live_cost_usd": 1.971904,
+    "output_tokens": 38075
+  },
+  "unread_media": [],
+  "note": "Cross-check run with `claude-opus-5-5` (2026-10-25, `python code/main.py --llm live --model claude-opus-5-5`): 405 live calls plus 4 answers cached by a smoke test minutes earlier with the same prompts, 0 failures. Opus 5.5 cannot run with thinking disabled, so its requests use adaptive thinking at effort low with 4,096 extra max_tokens; thinking tokens are included in the output tokens. Its output.csv is identical to the Haiku run, row for row. Scoring the participant-made cases with Opus afterwards made 2 more intent calls for their new texts (1,333 input and 155 output tokens, about $0.008), not included in the table."
+}

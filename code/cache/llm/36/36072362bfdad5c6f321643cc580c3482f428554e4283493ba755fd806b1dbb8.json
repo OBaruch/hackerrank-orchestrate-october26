@@ -1,0 +1,84 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "darwish.omar@icloud.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_20",
+     "analytics_7438"
+    ],
+    "names": [
+     "Omar Darwish"
+    ],
+    "phones": [],
+    "record_type": "analytics user profile",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "1"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "2"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "3"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "4"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "5"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "event",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Pulse Analytics - Users - Omar Darwish profile event timeline"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3854,
+  "output_tokens": 422
+ }
+}

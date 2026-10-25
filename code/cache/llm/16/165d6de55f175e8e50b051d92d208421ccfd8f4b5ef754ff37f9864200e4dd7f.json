@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester says a deletion they were told was complete is unfinished, because the account and its search result can still be found. They ask for it to be investigated and finished, which is a request to verify and complete a prior deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 666,
+  "output_tokens": 108
+ }
+}

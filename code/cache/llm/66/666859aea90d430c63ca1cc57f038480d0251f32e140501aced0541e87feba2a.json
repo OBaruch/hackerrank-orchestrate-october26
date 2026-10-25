@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The user asks for a copy of their account data and explicitly says not to delete or change anything, so this is an access request, not a deletion request.",
+  "request_type": "ACCESS"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 662,
+  "output_tokens": 79
+ }
+}

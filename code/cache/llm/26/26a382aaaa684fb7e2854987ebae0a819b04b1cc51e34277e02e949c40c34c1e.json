@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The text explicitly requests permanent account deletion, asks that the connected records be checked before completion is confirmed, and asks for a confirmation afterward.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 680,
+  "output_tokens": 85
+ }
+}

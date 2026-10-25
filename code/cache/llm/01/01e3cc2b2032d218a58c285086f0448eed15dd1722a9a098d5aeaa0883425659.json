@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks to begin the deletion process for the account tied to their email address. They also ask that applicable retention requirements be followed, which is consistent with authorizing erasure.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 683,
+  "output_tokens": 95
+ }
+}

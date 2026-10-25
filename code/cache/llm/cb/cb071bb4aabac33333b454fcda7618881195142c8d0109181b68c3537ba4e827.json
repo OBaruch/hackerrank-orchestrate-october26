@@ -1,0 +1,42 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "g.silva76@gmail.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "search_428",
+     "user_13"
+    ],
+    "names": [
+     "Gabriel Silva"
+    ],
+    "phones": [],
+    "record_type": "search_document",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "g.silva76.jr@gmail.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "search_1874"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "search_document",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Search Console - Customer Search"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3724,
+  "output_tokens": 189
+ }
+}

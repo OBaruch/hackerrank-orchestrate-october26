@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "English",
+  "rationale": "The person asks what personal information is held about them, which is an access request, and explicitly says they are not asking for erasure.",
+  "request_type": "ACCESS"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 660,
+  "output_tokens": 73
+ }
+}

@@ -58,6 +58,13 @@ class SubmissionRegressionTest(unittest.TestCase):
         self.assertEqual(len(rows), 518)
         self.assertEqual(rows, result.rows)
 
+    def test_opus_cross_check_gives_the_same_output(self):
+        result = pipeline.run(DATASET, llm_mode="cache", model="claude-opus-5-5")
+        if result.usage["total"]["cached_calls"] == 0:
+            self.skipTest("no cached Opus answers")
+        with open(os.path.join(ROOT, "output.csv"), encoding="utf-8", newline="") as fh:
+            self.assertEqual(list(csv.DictReader(fh)), result.rows)
+
 
 if __name__ == "__main__":
     unittest.main()

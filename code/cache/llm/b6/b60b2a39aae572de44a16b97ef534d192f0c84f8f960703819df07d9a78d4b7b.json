@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The person refers to an earlier deletion request that the privacy page shows as failed, and asks the company to check its systems to confirm the account and identifiable analytics data were removed. Asking to verify a deletion that was already requested counts as authorizing deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 675,
+  "output_tokens": 125
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "sj.park@naver.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "marketing_001"
+    ],
+    "names": [
+     "Soo-jin Park"
+    ],
+    "phones": [
+     "+82 10-5837-9451"
+    ],
+    "record_type": "marketing profile",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Audience Operations"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 2906,
+  "output_tokens": 116
+ }
+}

@@ -69,6 +69,30 @@ class CacheTest(unittest.TestCase):
             self.assertEqual((total["cached_calls"], total["live_calls"], total["live_cost_usd"]), (1, 0, 0.0))
             self.assertGreater(total["cost_usd"], 0)
 
+    def test_thinking_is_omitted_only_on_models_that_cannot_disable_it(self):
+        sent = {}
+
+        class Response:
+            stop_reason = "end_turn"
+            usage = type("Usage", (), {"input_tokens": 10, "output_tokens": 5})()
+            content = [type("Block", (), {"type": "text", "text": '{"ok": true}'})()]
+
+        class Messages:
+            def create(self, **params):
+                sent[params["model"]] = params
+                return Response()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            for model in ("claude-haiku-5-5", "claude-opus-5-5"):
+                llm = LLM(model=model, mode="cache", cache_dir=tmp)
+                llm.client = type("Client", (), {"messages": Messages()})()
+                self.assertEqual(llm.json_call("intent", "s", [{"type": "text", "text": "x"}], {}, 400), {"ok": True})
+        self.assertEqual(sent["claude-haiku-5-5"]["thinking"], {"type": "disabled"})
+        self.assertEqual(sent["claude-haiku-5-5"]["max_tokens"], 400)
+        self.assertNotIn("thinking", sent["claude-opus-5-5"])
+        self.assertGreater(sent["claude-opus-5-5"]["max_tokens"], 400)
+        self.assertEqual(sent["claude-opus-5-5"]["output_config"]["effort"], "low")
+
     def test_cache_key_depends_on_the_prompt(self):
         llm = LLM(model="claude-haiku-5-5", mode="cache", cache_dir="unused")
         content = [{"type": "text", "text": "x"}]

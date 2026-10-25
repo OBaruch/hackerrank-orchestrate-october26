@@ -1,0 +1,85 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_003",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "audit_event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_002",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "audit_event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_001",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "audit_event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_006",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "audit_event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_005",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "audit_event",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "audit_record_004",
+     "user_03"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "audit_event",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Sentinel - Account events"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3724,
+  "output_tokens": 443
+ }
+}
