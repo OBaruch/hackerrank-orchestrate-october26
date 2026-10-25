@@ -5,3 +5,4 @@ __pycache__/
 venv/
 code.zip
 code/runs/*.jsonl
+node_modules/
