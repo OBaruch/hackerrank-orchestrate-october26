@@ -375,3 +375,27 @@ branch=claude/project-thread-lkrh6b
 repo_root=/home/user/hackerrank-orchestrate-october26
 worktree=main
 parent_agent=none
+
+## [2026-10-25T05:12:00Z] Full run through the API with Claude Opus 5.5
+
+User Prompt (verbatim, secrets redacted):
+ahora has lo rsultados con el pai pero usando opus 5.5
+
+Agent Response Summary:
+Ran the full 518-request pipeline live against the Anthropic API with Claude Opus 5.5 (409 calls, 311,753 input and 38,075 output tokens, about $2.01, 0 failures). Opus 5.5 rejects disabled thinking, so the client now omits the thinking parameter on such models (adaptive at low effort) and adds max_tokens headroom; Haiku requests and their cache keys are unchanged. The Opus output is identical to the Haiku output.csv on all 518 rows: both models agree on deletion intent for all 398 texts and give the same facts for all 11 screenshots, and sample and custom-case metrics are the same. Haiku stays the default model (same answer at 1/40 of the cost) and the Opus run is documented as an independent cross-check in the usage and evaluation reports.
+
+Actions:
+* Edited code/ghost_audit/llm.py (models that cannot disable thinking), code/evaluation/main.py (--model option), code/evaluation/usage_report.py (--compare runs table)
+* python code/main.py --llm live --model claude-opus-5-5 (output to code/runs/output_opus.csv), compared with output.csv and the Haiku cache
+* python code/evaluation/main.py --model claude-opus-5-5 --custom
+* Regenerated code/evaluation/usage_report.md; edited code/evaluation/evaluation_report.md (failure row 13, section 4 model cross-check) and README.md
+* Added two tests (thinking parameter per model, Opus cache reproduces output.csv); 39 tests pass
+* Appended this entry to log.txt
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5[1m]
+branch=claude/project-thread-lkrh6b
+repo_root=/home/user/hackerrank-orchestrate-october26
+worktree=main
+parent_agent=none

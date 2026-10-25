@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The person says they already deleted the account and asks the company to check that no data tied to the old email address remains anywhere, including in systems that don't display the email. That is a request to verify the deletion and remove leftover copies, which counts as authorizing deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 673,
+  "output_tokens": 122
+ }
+}

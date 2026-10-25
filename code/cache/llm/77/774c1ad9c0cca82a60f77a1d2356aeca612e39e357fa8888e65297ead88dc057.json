@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The customer explicitly asks to remove their profile and to clean their personal details out of earlier support conversations, which is an erasure request. Their note that shared conversations may need to stay limits only the scope for third-party content. It does not withdraw the deletion request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 681,
+  "output_tokens": 117
+ }
+}

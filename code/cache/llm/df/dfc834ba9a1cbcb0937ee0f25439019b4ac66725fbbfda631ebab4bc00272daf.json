@@ -1,0 +1,68 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_17"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "customer_reference",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "ORD-20263245"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "order",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "CS-3245"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "support_case",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "CS-3378"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "support_case",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "FIN-7742"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "finance_record",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Customer Reference Registry - user_17 overview"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3724,
+  "output_tokens": 352
+ }
+}

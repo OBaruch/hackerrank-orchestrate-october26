@@ -143,10 +143,15 @@ The worker handles a run's profiles in the order the requests were submitted, st
 ## Use of Claude
 
 - Model: `claude-haiku-5-5`, the smallest current model. Override it with `--model` or `GHOST_AUDIT_MODEL`.
+- Cross-check: the full set was also run with `claude-opus-5-5`. It agreed on all 398 intent decisions and all 11
+  screenshots and wrote an identical `output.csv`, at 40 times the cost ($2.01 against $0.05). Its answers are cached,
+  so it replays for free (`code/evaluation/evaluation_report.md`, section 4):
+  `python code/main.py --llm cache --model claude-opus-5-5 --out code/runs/output_opus.csv --usage code/runs/usage_opus.json`.
 - Calls:
   - one intent call per distinct request text (398 texts across both request files);
   - one vision call per screenshot (11).
-- Every call uses structured JSON output with a fixed schema, low effort and thinking off. Answers are validated: resource ids and identifiers must be well formed, and the step plan always comes from the deterministic core.
+- Every call uses structured JSON output with a fixed schema and low effort. Thinking is off, except on models that
+  cannot turn it off (such as Opus 5.5), where it runs adaptive at low effort. Answers are validated: resource ids and identifiers must be well formed, and the step plan always comes from the deterministic core.
 - If the API is missing or fails, the pipeline falls back to the keyword classifier and to PDF-only media. The output stays valid.
 - Prompts live in `code/ghost_audit/intent.py` and `code/ghost_audit/media.py`.
 

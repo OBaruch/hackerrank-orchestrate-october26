@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "English",
+  "rationale": "The person asks to update the mobile number on their profile and explicitly wants the account kept active. This is a correction request, not a deletion.",
+  "request_type": "CORRECTION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 660,
+  "output_tokens": 80
+ }
+}

@@ -23,6 +23,11 @@ PRICES = {
     "claude-opus-5-5": (4.00, 20.00),
 }
 
+# Models on which thinking cannot be switched off ({"type": "disabled"} is a 400): the request omits
+# `thinking` (adaptive, kept short by effort "low") and gets headroom in max_tokens for what it spends.
+ALWAYS_THINKING = ("claude-opus-5-5", "claude-sonnet-5-5", "claude-fable-5")
+THINKING_HEADROOM = 4096
+
 CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "cache", "llm")
 
 
@@ -139,17 +144,17 @@ class LLM:
             return entry["output"]
         if not self.live:
             return None
+        params = dict(model=self.model, max_tokens=max_tokens, system=system,
+                      output_config={"effort": "low", "format": {"type": "json_schema", "schema": schema}},
+                      messages=[{"role": "user", "content": content}])
+        if self.model.startswith(ALWAYS_THINKING):
+            params["max_tokens"] = max_tokens + THINKING_HEADROOM
+        else:
+            params["thinking"] = {"type": "disabled"}
         resp = None
         for attempt in range(3):
             try:
-                resp = self.client.messages.create(
-                    model=self.model,
-                    max_tokens=max_tokens,
-                    system=system,
-                    thinking={"type": "disabled"},
-                    output_config={"effort": "low", "format": {"type": "json_schema", "schema": schema}},
-                    messages=[{"role": "user", "content": content}],
-                )
+                resp = self.client.messages.create(**params)
                 break
             except Exception as exc:  # network / overload: back off, then give up to the deterministic path
                 if attempt == 2:

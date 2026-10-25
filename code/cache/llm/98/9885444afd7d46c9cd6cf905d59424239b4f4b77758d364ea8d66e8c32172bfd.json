@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "Japanese",
+  "rationale": "The requester explicitly asks for complete deletion of the account linked to this email address (アカウントの完全な削除を依頼します). They also ask that current and past identifiers be checked under the privacy procedure and that they be told the result.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 703,
+  "output_tokens": 112
+ }
+}

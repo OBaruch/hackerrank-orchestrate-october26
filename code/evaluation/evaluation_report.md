@@ -5,6 +5,7 @@ How to reproduce:
 ```bash
 python code/evaluation/main.py --custom              # agent on the 32 public samples + participant-made cases
 python code/evaluation/main.py --llm off --custom    # same, with no model call at all
+python code/evaluation/main.py --model claude-opus-5-5 --custom   # same, with the cached Opus 5.5 answers
 ```
 
 The evaluator (`code/evaluation/main.py`) compares the agent's rows with `dataset/sample_output.csv`. It reports these metrics:
@@ -154,9 +155,27 @@ The work was iterated against the public samples. Each row is a failure the eval
 | 10 | Eval requests whose only evidence is a screenshot or a PDF statement produced empty answers (12 requests, e.g. case_33, case_34). The data catalog names the record by a reference such as the statement number `NST-2026-0718-1842` or `user_17`, not by its resource id. | Catalog references are matched against the records transcribed from screenshots by Claude vision and against PDF text. The matched record's visible identifiers, masking and connector or restore state give the resource state. | n/a (eval only) |
 | 11 | Comparing the cache-filling run with a later cached rerun showed 12 evaluation rows whose analytics tie was paired differently (cases 59/60, 77/79, 80/81, 380/381, 411/412, 497/499). One tie-solving loop iterated over a Python `set`, so its order depended on the interpreter's hash seed. | All tie loops iterate in a sorted order. The output is now byte-identical across `PYTHONHASHSEED` values (checked with seeds 0 to 5). | 32 / 28 (unchanged) |
 | 12 | A unit-test suite (`code/tests/`, 37 tests) was added to lock the behaviour in. Running it with warnings as errors showed that every SQL snapshot left its in-memory SQLite connection open. | The SQL extractor closes its connection. The suite also checks a small fictional dataset step by step and that a rerun reproduces `output.csv` byte for byte. | 32 / 28 (unchanged) |
+| 13 | Before the Opus 5.5 cross-check: that model rejects `thinking: {"type": "disabled"}` with a 400 at every effort level (per the API documentation), so the run would have fallen back to keywords for every call. | Models that always think get no `thinking` field (adaptive, effort `low`) and 4,096 extra `max_tokens`; other models keep thinking disabled, so the cached Haiku answers still match. The Opus run then had 0 failures. | 32 / 28 (unchanged) |
 
-## 4. Known limitations
+## 4. Model cross-check: Claude Opus 5.5
+
+The whole evaluation set was run a second time with `claude-opus-5-5` instead of `claude-haiku-5-5`, with the same prompts and schemas (`python code/main.py --llm live --model claude-opus-5-5`). The two runs agree everywhere the model's answer matters:
+
+| check | Haiku 5.5 | Opus 5.5 | agreement |
+|---|---|---|---|
+| distinct request texts that authorize deletion (398 texts, both request files) | 388 | 388 | 398 / 398 texts |
+| request type label | | | 396 / 398 texts (two labels differ; the deletion decision is the same) |
+| screenshot observations (resource, present, exposed, active, linked identifiers) | | | 11 / 11 screenshots |
+| `output.csv` rows | | | 518 / 518 identical |
+| public samples: statuses, step F1, exact sequences | 32/32, 98.7 %, 28/32 | 32/32, 98.7 %, 28/32 | same |
+| participant-made cases | 4 / 4 | 4 / 4 | same |
+| cost of the 409 calls | $0.0507 | $2.0085 | Opus costs 40 times more |
+| wall time of the run | 582 s | 1,193 s | |
+
+On this dataset the smallest model is enough. Both of the model's jobs (request intent and screenshot transcription) are perception tasks with one clear answer, and the deterministic core decides everything else. Haiku stays the default. The Opus answers are cached too, so `--model claude-opus-5-5` replays this cross-check without a key and without cost.
+
+## 5. Known limitations
 
 - Two-way ties between identifier-less analytics rows in one worker run cannot be settled from the evidence. They are paired in a stable order.
 - On the evaluation set, 39 profile assignments remain ambiguous after the ring rule and are guesses, labelled `batch-guess` in `code/runs/trace.jsonl`.
-- Screenshot reading depends on the vision transcription. The output validates identifiers and resource ids, but a misread status would change the finding. All 11 transcriptions are cached and can be inspected in `code/cache/llm/`.
+- Screenshot reading depends on the vision transcription. The output validates identifiers and resource ids, but a misread status would change the finding. All 11 transcriptions are cached and can be inspected in `code/cache/llm/`. An independent transcription by Opus 5.5 gave the same observations for all 11 screenshots.

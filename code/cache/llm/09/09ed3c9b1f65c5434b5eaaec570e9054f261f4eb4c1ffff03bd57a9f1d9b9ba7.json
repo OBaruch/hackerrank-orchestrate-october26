@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "English",
+  "rationale": "The person asks only to be removed from marketing lists and explicitly wants to keep receiving receipts and service messages, so the account must be kept. This is a marketing opt-out, not a deletion request.",
+  "request_type": "MARKETING_OPT_OUT"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 657,
+  "output_tokens": 108
+ }
+}

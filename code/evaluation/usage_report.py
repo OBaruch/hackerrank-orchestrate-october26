@@ -1,9 +1,11 @@
 """Render code/runs/usage.json (written by code/main.py) as code/evaluation/usage_report.md.
 
     python code/evaluation/usage_report.py [--usage code/runs/usage.json] [--first-run code/runs/usage_live.json]
+                                           [--compare code/runs/usage_haiku_live.json ...]
 
 --first-run points at the usage file of the run that actually called the API (the cache-filling run);
 the final run may replay every answer from the cache and therefore bill nothing itself.
+--compare adds the cache-filling runs of other models over the same requests, for a side-by-side table.
 """
 from __future__ import annotations
 
@@ -44,6 +46,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--usage", default=os.path.join(CODE, "runs", "usage.json"))
     ap.add_argument("--first-run", default=os.path.join(CODE, "runs", "usage_live.json"))
+    ap.add_argument("--compare", action="append", default=[], help="usage file of another model's full run")
     ap.add_argument("--out", default=os.path.join(HERE, "usage_report.md"))
     args = ap.parse_args(argv)
     with open(args.usage, encoding="utf-8") as fh:
@@ -52,7 +55,10 @@ def main(argv=None):
     out = ["# Token usage report", "",
            f"Final full-dataset run that produced `output.csv`: {n} requests "
            f"(`dataset/deletion_requests.csv`), wall time {u['seconds']} s.", "",
-           "Model provider: Anthropic (Claude API). Only one model is used. Prices are Anthropic list prices "
+           "Model provider: Anthropic (Claude API). "
+           + ("The run that produced `output.csv` uses one model; cross-check runs of other models are listed at "
+              "the end with per-model and overall totals. " if args.compare else "Only one model is used. ")
+           + "Prices are Anthropic list prices "
            "per million tokens (input / output): " + ", ".join(
                f"`{m}` ${v['price_per_mtok'][0]:.2f} / ${v['price_per_mtok'][1]:.2f}"
                for m, v in u["models"].items() if v.get("price_per_mtok")) + ".", "",
@@ -75,6 +81,39 @@ def main(argv=None):
                 f"replays exactly these answers from the cache, so it bills nothing itself."]
         if f.get("note"):
             out += ["", f["note"]]
+    if args.compare:
+        compared = []
+        for path in args.compare:
+            with open(path, encoding="utf-8") as fh:
+                compared.append(json.load(fh))
+        prices = ", ".join(f"`{m}` ${v['price_per_mtok'][0]:.2f} / ${v['price_per_mtok'][1]:.2f}"
+                           for c in compared for m, v in c["models"].items() if v.get("price_per_mtok"))
+        out += ["", "## All full runs, by model", "",
+                "Cache-filling runs over the same 518 requests (same prompts and schemas), the final model first. "
+                "Their answers are cached too, so `python code/main.py --model <id>` reproduces each run for free. "
+                f"List prices of the other models (input / output per million tokens): {prices}.", "",
+                "| model | calls | input tokens | output tokens | total tokens | avg tokens / request | "
+                "cost (USD) | cost / request (USD) | wall time (s) | failures |",
+                "|---|---|---|---|---|---|---|---|---|---|"]
+        runs = [f] if os.path.exists(args.first_run) else []
+        notes = []
+        for c in compared:
+            runs.append(c)
+            if c.get("note"):
+                notes.append(c["note"])
+        for c in runs:
+            for model, m in c["models"].items():
+                tot = m["input_tokens"] + m["output_tokens"]
+                out.append(f"| `{model}` | {m['calls']} | {m['input_tokens']:,} | {m['output_tokens']:,} | {tot:,} | "
+                           f"{tot / n:,.1f} | {m['cost_usd']:.4f} | {m['cost_usd'] / n:.6f} | {c.get('seconds')} | "
+                           f"{c.get('failures', 0)} |")
+        calls = sum(c["total"]["calls"] for c in runs)
+        tin = sum(c["total"]["input_tokens"] for c in runs)
+        tout = sum(c["total"]["output_tokens"] for c in runs)
+        cost = sum(c["total"]["cost_usd"] for c in runs)
+        out.append(f"| **all runs** | {calls} | {tin:,} | {tout:,} | {tin + tout:,} | {(tin + tout) / n:,.1f} | "
+                   f"{cost:.4f} | {cost / n:.6f} | | |")
+        out += [""] + notes
     out += ["", f"API failures or invalid answers that fell back to the deterministic path: {u.get('failures', 0)}.",
             "", "The deterministic core (evidence parsing, identity, state reconstruction, policy, ordering) uses no "
             "model calls. With `--llm off` the whole run makes zero calls and still writes a valid `output.csv`."]

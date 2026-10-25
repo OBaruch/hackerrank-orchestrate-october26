@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "Portuguese",
+  "rationale": "The requester only wants to stop receiving promotional emails and explicitly asks that the account not be deleted.",
+  "request_type": "MARKETING_OPT_OUT"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 661,
+  "output_tokens": 83
+ }
+}

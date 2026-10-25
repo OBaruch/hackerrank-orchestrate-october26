@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The user states they are deleting their account and asks that no analytics data remain linked to them. Retaining anonymous statistics is consistent with erasure of their personal data.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 666,
+  "output_tokens": 88
+ }
+}

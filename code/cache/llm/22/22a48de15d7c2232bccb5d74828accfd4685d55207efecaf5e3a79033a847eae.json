@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks for permanent deletion of the account tied to their email address. Asking for the normal identity and data review is part of processing the deletion, not a request to keep the account.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 676,
+  "output_tokens": 94
+ }
+}

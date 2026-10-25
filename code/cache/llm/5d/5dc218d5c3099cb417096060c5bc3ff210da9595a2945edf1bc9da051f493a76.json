@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The requester explicitly asks for the account to be permanently deleted, subject to applicable retention requirements. This is a clear erasure request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 684,
+  "output_tokens": 80
+ }
+}

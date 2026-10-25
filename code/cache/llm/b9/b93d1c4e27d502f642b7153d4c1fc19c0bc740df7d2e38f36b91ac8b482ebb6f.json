@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The requester asks the company to remove records linked to both their old Yahoo address and their current email address. Asking to remove personal data records counts as authorizing deletion.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 665,
+  "output_tokens": 87
+ }
+}

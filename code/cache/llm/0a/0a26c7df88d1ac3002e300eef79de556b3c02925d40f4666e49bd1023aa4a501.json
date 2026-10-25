@@ -1,0 +1,14 @@
+{
+ "model": "claude-opus-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The person asks only to correct a misspelled surname and explicitly says not to remove any records. This is a correction request and does not authorize deletion.",
+  "request_type": "CORRECTION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 656,
+  "output_tokens": 83
+ }
+}
