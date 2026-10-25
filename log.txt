@@ -529,3 +529,24 @@ branch=claude/project-thread-p3gnad
 repo_root=/home/user/hackerrank-orchestrate-october26
 worktree=main
 parent_agent=none
+
+## [2026-10-25T22:05:00Z] Technical essay of the tool for interview study
+
+User Prompt (verbatim, secrets redacted):
+ahroa dame un ensayo de l aherrmitna un poco ams tecnico paraestuidar para la entevista
+
+Agent Response Summary:
+Wrote a technical study essay in Spanish as a Claude Doc, in 14 sections: the problem and thesis, the output contract and time window, the architecture (an 8-stage diagram with pseudocode and a module table), evidence extraction, identity resolution, state reconstruction at audit_at, batch attribution, policy and step planning, the validator, where Claude is used, evaluation, the Haiku 5.5 vs Opus 5.5 comparison, design trade-offs and limits, and a conclusion. Details were taken from a fresh read of code/ghost_audit/*.py and the evaluation and usage reports. The limits section flags that later_retained and batch attribution look at evidence captured after audit_at to link records, without citing it or changing a case's status. No code changed.
+
+Actions:
+* Read code/ghost_audit/*.py, code/main.py, code/requirements.txt, code/evaluation/evaluation_report.md and usage_report.md
+* Created and filled the Claude Doc "Ghost Data Still Exists: ensayo técnico", including one architecture diagram widget
+* Appended this entry to log.txt, committed and pushed to the open pull request
+
+Context:
+tool=Claude Code
+model=claude-opus-5-5[1m]
+branch=claude/project-thread-p3gnad
+repo_root=/home/user/hackerrank-orchestrate-october26
+worktree=main
+parent_agent=none
