@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "Spanish",
+  "rationale": "The request explicitly asks for permanent deletion of the account associated with the email address, and asks to review current and previous identifiers per the privacy policy, which falls under deleting the account and its personal data.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 704,
+  "output_tokens": 102
+ }
+}

@@ -1,28 +1,44 @@
 {
   "failures": 0,
-  "models": {},
+  "models": {
+    "claude-haiku-5-5": {
+      "by_purpose": {
+        "intent": {
+          "calls": 398,
+          "input_tokens": 270299,
+          "output_tokens": 35920
+        },
+        "screenshot": {
+          "calls": 11,
+          "input_tokens": 41045,
+          "output_tokens": 3179
+        }
+      },
+      "cached_calls": 409,
+      "calls": 409,
+      "cost_usd": 0.050684,
+      "input_tokens": 311344,
+      "live_calls": 0,
+      "live_cost_usd": 0.0,
+      "live_input_tokens": 0,
+      "live_output_tokens": 0,
+      "output_tokens": 39099,
+      "price_per_mtok": [
+        0.1,
+        0.5
+      ]
+    }
+  },
   "requests": 518,
-  "seconds": 1.44,
+  "seconds": 5.42,
   "total": {
-    "cached_calls": 0,
-    "calls": 0,
-    "cost_usd": 0.0,
-    "input_tokens": 0,
+    "cached_calls": 409,
+    "calls": 409,
+    "cost_usd": 0.050684,
+    "input_tokens": 311344,
     "live_calls": 0,
     "live_cost_usd": 0.0,
-    "output_tokens": 0
+    "output_tokens": 39099
   },
-  "unread_media": [
-    "evidence_04",
-    "evidence_09",
-    "evidence_14",
-    "evidence_19",
-    "evidence_23",
-    "evidence_28",
-    "evidence_32",
-    "evidence_37",
-    "evidence_42",
-    "evidence_46",
-    "evidence_60"
-  ]
+  "unread_media": []
 }

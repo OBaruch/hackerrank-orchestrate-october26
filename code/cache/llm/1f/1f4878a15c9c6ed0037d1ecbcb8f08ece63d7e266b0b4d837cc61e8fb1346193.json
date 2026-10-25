@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The request explicitly asks for a permanent account deletion for the given email address and to apply it across systems covered by the deletion policy, which is an erasure request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 682,
+  "output_tokens": 86
+ }
+}

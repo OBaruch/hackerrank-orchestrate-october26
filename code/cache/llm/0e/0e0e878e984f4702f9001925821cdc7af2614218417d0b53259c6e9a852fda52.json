@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks to erase the account linked to the email address, which is a clear deletion request; the mention of identity review and a completion notice does not change that it authorizes deletion.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 670,
+  "output_tokens": 95
+ }
+}

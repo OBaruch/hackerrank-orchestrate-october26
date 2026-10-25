@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The user asks to replace an outdated mobile number and explicitly keep the account active; this is a correction of profile details, not a deletion or erasure request.",
+  "request_type": "CORRECTION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 659,
+  "output_tokens": 87
+ }
+}

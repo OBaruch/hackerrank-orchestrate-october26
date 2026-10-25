@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks for deletion of the account registered to their email address, which is a clear erasure request, and asks to be notified when it is completed.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 675,
+  "output_tokens": 84
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks for the account tied to the address to be erased and for copies within scope to be handled, which is a request to delete the account and personal data.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 680,
+  "output_tokens": 81
+ }
+}

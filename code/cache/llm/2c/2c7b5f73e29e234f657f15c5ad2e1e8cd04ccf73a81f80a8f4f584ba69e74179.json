@@ -1,0 +1,55 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "haruka.s1838@zoho.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_11",
+     "account_5762"
+    ],
+    "names": [
+     "Haruka Sato"
+    ],
+    "phones": [
+     "+81 90 7610 2507"
+    ],
+    "record_type": "customer",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "ORD-20265762",
+     "CS-8538",
+     "support_9538"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "order",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "ORD-20265518"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "order",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Customers - Haruka Sato customer profile"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3918,
+  "output_tokens": 266
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester explicitly asks for the account to be permanently deleted and asks that connected identifiers be reviewed as part of that deletion, which is an authorization to erase the account and related personal data.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 681,
+  "output_tokens": 98
+ }
+}

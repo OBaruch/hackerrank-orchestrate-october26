@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "English",
+  "rationale": "The person asks to correct a misspelled surname and explicitly wants no records removed, so it is a correction request and does not authorize deletion.",
+  "request_type": "CORRECTION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 655,
+  "output_tokens": 83
+ }
+}

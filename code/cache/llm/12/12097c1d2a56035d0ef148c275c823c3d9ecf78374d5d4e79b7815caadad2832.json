@@ -1,0 +1,69 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "marcus.lee@northstar.shop"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "export_1261",
+     "customer_export_1261.zip"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "data_export",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "ingrid.dahl@outlook.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "export_1260",
+     "customer_export_1260.zip"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "data_export",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "sara.kim@northstar.shop"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "export_1259",
+     "customer_export_1259.zip"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "data_export",
+    "state": "PRESENT"
+   },
+   {
+    "emails": [
+     "daniel.park@northstar.shop"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "export_1258",
+     "customer_export_1258.zip"
+    ],
+    "names": [],
+    "phones": [],
+    "record_type": "data_export",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Customer Download Center - Data exports"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3723,
+  "output_tokens": 376
+ }
+}

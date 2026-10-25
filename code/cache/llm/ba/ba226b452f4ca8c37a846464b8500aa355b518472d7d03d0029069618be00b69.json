@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks to verify that their account and profile were removed and that remaining records cannot identify them, which is a request to audit and finish an erasure already requested, so it authorizes deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 673,
+  "output_tokens": 104
+ }
+}

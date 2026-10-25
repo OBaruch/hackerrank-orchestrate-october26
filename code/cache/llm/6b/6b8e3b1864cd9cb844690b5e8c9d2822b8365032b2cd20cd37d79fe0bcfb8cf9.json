@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "ja",
+  "rationale": "The request explicitly asks for complete deletion of the account associated with the email address and asks for verification of identity before the privacy procedure, which is part of processing the deletion request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 702,
+  "output_tokens": 92
+ }
+}

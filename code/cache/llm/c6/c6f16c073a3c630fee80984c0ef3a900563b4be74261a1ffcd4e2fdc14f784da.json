@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks to verify that their account was deleted, which is a verification of an already-requested deletion, and asks that an unrelated similar-email record not be treated as theirs. This falls under deletion verification and authorizes deletion of their account.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 670,
+  "output_tokens": 121
+ }
+}

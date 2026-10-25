@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The request explicitly asks to erase the account linked to the email address, which is a clear authorization of account and personal data deletion, with a request for confirmation upon completion.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 681,
+  "output_tokens": 89
+ }
+}

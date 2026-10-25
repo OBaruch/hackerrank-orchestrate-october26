@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The message explicitly requests permanent account deletion and asks that it be applied to the relevant records, so it authorizes erasure of the account.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 680,
+  "output_tokens": 81
+ }
+}

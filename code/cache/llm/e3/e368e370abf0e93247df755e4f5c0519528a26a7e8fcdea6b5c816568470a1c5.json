@@ -1,0 +1,32 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "kagyeman8947@fastmail.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "CS-5034",
+     "support_1034",
+     "ORD-20265034",
+     "SWF-884103"
+    ],
+    "names": [
+     "Kofi Agyeman",
+     "Maya Chen"
+    ],
+    "phones": [],
+    "record_type": "support ticket",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Helpline Console - CS-5034 Where is my delivery?"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3918,
+  "output_tokens": 151
+ }
+}

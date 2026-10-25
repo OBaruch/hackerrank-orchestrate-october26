@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester asks to audit a previously requested deletion and confirm the account was fully removed, which falls under verifying or finishing an existing deletion request.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 668,
+  "output_tokens": 93
+ }
+}

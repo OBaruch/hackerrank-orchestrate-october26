@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The user asks for help resetting a login they cannot access and explicitly says not to close the account, so no deletion is authorized.",
+  "request_type": "ACCOUNT_SUPPORT"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 652,
+  "output_tokens": 86
+ }
+}

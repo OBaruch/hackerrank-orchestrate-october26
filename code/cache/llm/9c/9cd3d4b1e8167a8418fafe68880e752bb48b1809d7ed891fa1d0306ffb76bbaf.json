@@ -1,0 +1,29 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "darwish.omar@icloud.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "user_20",
+     "analytics_7438"
+    ],
+    "names": [
+     "Omar Darwish"
+    ],
+    "phones": [],
+    "record_type": "user profile",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Pulse Analytics - Users - Omar Darwish"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 3853,
+  "output_tokens": 122
+ }
+}

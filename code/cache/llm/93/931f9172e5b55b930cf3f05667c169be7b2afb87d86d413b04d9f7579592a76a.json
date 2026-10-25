@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The request explicitly asks for permanent account deletion, asks that copies within the scope of the request be handled, and requests confirmation once complete, which clearly authorizes erasure of the account and personal data.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 683,
+  "output_tokens": 101
+ }
+}

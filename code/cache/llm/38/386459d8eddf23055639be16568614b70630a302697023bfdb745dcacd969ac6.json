@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The requester explicitly asks for deletion of the account registered to their email address under the personal-data deletion procedure, which is a direct erasure request.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 678,
+  "output_tokens": 83
+ }
+}

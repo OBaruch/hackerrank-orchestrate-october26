@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The user states they no longer need the account and asks for removal of their name and contact details, which is a request to erase personal data; retaining an internal deleted-account reference where other records depend on it does not negate the deletion authorization.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 675,
+  "output_tokens": 105
+ }
+}

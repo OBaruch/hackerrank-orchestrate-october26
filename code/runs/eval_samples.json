@@ -1,0 +1,132 @@
+{
+  "samples": {
+    "cases": 32,
+    "status_accuracy": 1.0,
+    "step_precision": 0.9947368421052631,
+    "step_recall": 0.9792746113989638,
+    "step_f1": 0.9869451697127937,
+    "steps": {
+      "gold": 193,
+      "pred": 190,
+      "matched": 189
+    },
+    "field_accuracy": {
+      "step_no": 0.9533678756476683,
+      "phase": 0.9792746113989638,
+      "system_id": 0.9792746113989638,
+      "resource_id": 0.9792746113989638,
+      "operation": 0.9792746113989638,
+      "state": 0.9792746113989638,
+      "evidence_id": 0.9792746113989638
+    },
+    "sequence_accuracy": 0.875,
+    "order_accuracy": 1.0,
+    "status_confusion": {
+      "COMPLETE->COMPLETE": 10,
+      "INCOMPLETE->INCOMPLETE": 22
+    },
+    "mismatches": [
+      {
+        "case_id": "case_03",
+        "gold_status": "COMPLETE",
+        "pred_status": "COMPLETE",
+        "missing": [
+          [
+            "VERIFICATION",
+            "analytics_platform",
+            "analytics_9406",
+            "VERIFY_RECORD_ANONYMIZED",
+            "ANONYMIZED",
+            "evidence_94"
+          ]
+        ],
+        "extra": [
+          [
+            "VERIFICATION",
+            "analytics_platform",
+            "analytics_5589",
+            "VERIFY_RECORD_ANONYMIZED",
+            "ANONYMIZED",
+            "evidence_94"
+          ]
+        ]
+      },
+      {
+        "case_id": "case_04",
+        "gold_status": "COMPLETE",
+        "pred_status": "COMPLETE",
+        "missing": [
+          [
+            "VERIFICATION",
+            "account_service",
+            "account_004",
+            "VERIFY_RECORD_ABSENT",
+            "ABSENT",
+            "evidence_54"
+          ]
+        ],
+        "extra": []
+      },
+      {
+        "case_id": "case_18",
+        "gold_status": "INCOMPLETE",
+        "pred_status": "INCOMPLETE",
+        "missing": [
+          [
+            "VERIFICATION",
+            "security_service",
+            "audit_record_6645",
+            "VERIFY_RECORD_PRESENT",
+            "PRESENT",
+            ""
+          ]
+        ],
+        "extra": []
+      },
+      {
+        "case_id": "case_20",
+        "gold_status": "INCOMPLETE",
+        "pred_status": "INCOMPLETE",
+        "missing": [
+          [
+            "VERIFICATION",
+            "security_service",
+            "audit_record_5569",
+            "VERIFY_RECORD_PRESENT",
+            "PRESENT",
+            ""
+          ]
+        ],
+        "extra": []
+      }
+    ]
+  },
+  "custom": {
+    "cases": 4,
+    "status_accuracy": 1.0,
+    "step_precision": 1.0,
+    "step_recall": 1.0,
+    "step_f1": 1.0,
+    "steps": {
+      "gold": 12,
+      "pred": 12,
+      "matched": 12
+    },
+    "field_accuracy": {
+      "step_no": 1.0,
+      "phase": 1.0,
+      "system_id": 1.0,
+      "resource_id": 1.0,
+      "operation": 1.0,
+      "state": 1.0,
+      "evidence_id": 1.0
+    },
+    "sequence_accuracy": 1.0,
+    "order_accuracy": 1.0,
+    "status_confusion": {
+      "INCOMPLETE->INCOMPLETE": 2,
+      "NOT_APPLICABLE->NOT_APPLICABLE": 2
+    },
+    "mismatches": []
+  }
+}

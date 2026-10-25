@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The requester notes the account is already gone but asks to remove leftover personal details from an internal deleted-account record, keeping only a reference. This asks to finish a deletion already requested and remove residual copies of personal data, which counts as authorizing deletion.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 676,
+  "output_tokens": 125
+ }
+}

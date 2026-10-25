@@ -1,0 +1,30 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "records": [
+   {
+    "emails": [
+     "sj.park@naver.com"
+    ],
+    "flow": "NOT_SHOWN",
+    "labels": [
+     "marketing_001"
+    ],
+    "names": [
+     "Soo-jin Park"
+    ],
+    "phones": [
+     "+82 10-5837-9451"
+    ],
+    "record_type": "profile",
+    "state": "PRESENT"
+   }
+  ],
+  "screen": "Audience Operations - Soo-jin Park profile"
+ },
+ "purpose": "screenshot",
+ "usage": {
+  "input_tokens": 2905,
+  "output_tokens": 123
+ }
+}

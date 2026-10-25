@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "English",
+  "rationale": "The user asks to change the email address on the account and explicitly states they want to continue using the service, so it is a correction request and does not authorize deletion.",
+  "request_type": "CORRECTION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 649,
+  "output_tokens": 84
+ }
+}

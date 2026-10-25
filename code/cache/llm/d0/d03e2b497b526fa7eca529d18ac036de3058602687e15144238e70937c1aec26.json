@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "en",
+  "rationale": "The user states they already deleted their account and asks the company to verify the profile is gone and that any retained data is limited, which is a request to verify or finish an existing deletion and remove leftover data, matching the deletion-verification criteria.",
+  "request_type": "DELETION_VERIFICATION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 672,
+  "output_tokens": 117
+ }
+}

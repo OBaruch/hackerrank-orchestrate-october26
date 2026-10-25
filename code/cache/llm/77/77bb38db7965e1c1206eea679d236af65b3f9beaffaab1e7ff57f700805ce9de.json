@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The request explicitly asks for permanent account deletion, asks to check connected records before confirming completion, and requests a confirmation once the process finishes.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 679,
+  "output_tokens": 84
+ }
+}

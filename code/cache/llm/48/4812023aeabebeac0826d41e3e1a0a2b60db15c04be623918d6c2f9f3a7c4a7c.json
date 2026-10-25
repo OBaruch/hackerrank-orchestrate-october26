@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": false,
+  "language": "en",
+  "rationale": "The requester asks what personal information the company holds about them, which is an access request, and explicitly states it is not a request to erase data.",
+  "request_type": "ACCESS"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 659,
+  "output_tokens": 77
+ }
+}

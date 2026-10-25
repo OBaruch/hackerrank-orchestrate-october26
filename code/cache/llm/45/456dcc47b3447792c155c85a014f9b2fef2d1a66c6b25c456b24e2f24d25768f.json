@@ -1,0 +1,14 @@
+{
+ "model": "claude-haiku-5-5",
+ "output": {
+  "authorizes_deletion": true,
+  "language": "English",
+  "rationale": "The requester explicitly asks to begin the deletion process for the account tied to their email address, which is a request to erase the account and associated personal data. The request for identity and data review and confirmation is a procedural step within that deletion, not a different request type.",
+  "request_type": "DELETION"
+ },
+ "purpose": "intent",
+ "usage": {
+  "input_tokens": 677,
+  "output_tokens": 112
+ }
+}
